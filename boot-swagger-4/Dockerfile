@@ -10,7 +10,7 @@ RUN chown myuser:myuser /usr/src/app/
 USER myuser
 
 # Copy pom.xml and prefetch dependencies so a repeated build can continue from the next step with existing dependencies
-COPY --chown=myuser pom.xml ./
+COPY --chown=myuser boot-swagger-4/pom.xml ./
 RUN mvn dependency:go-offline -Pproduction
 
 # Copy all needed project files to a folder
